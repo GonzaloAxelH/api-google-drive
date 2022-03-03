@@ -11,9 +11,9 @@ router.post("/upload", (req, res) => {
     if (err) {
       return res
         .status(500)
-        .send({ message: "ERR:Los archivos node se estan moviendo" });
+        .json({ message: "ERR:Los archivos node se estan moviendo" });
     }
-    return res.status(200).send({
+    return res.status(200).json({
       message: "Archivo subido correctamente !",
       destino: `${root}${destino}${getFiles.name}`,
     });
